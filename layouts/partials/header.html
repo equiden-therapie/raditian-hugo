@@ -4,13 +4,15 @@
       <a class="navbar-brand" href="{{ .Site.BaseURL | absURL }}">
         <span>{{ .Site.Params.logo.text1 }}</span>
         <span>{{ .Site.Params.logo.text2 }}</span>
-        <!-- <img
-          class="img-responsive"
-          src="img/logo-dark.png"
-          srcset="img/logo-dark.png 1x, img/logo-dark@2x.png 2x"
-          alt="Header Logo"
-        /> -->
       </a>
+      {{- if .Site.Params.logo.icon.url -}}
+      <a class="navbar-brand-icon" href="{{ .Site.BaseURL | absURL }}">
+        <img
+          src="{{ .Site.Params.logo.icon.url }}"
+          alt="{{ .Site.Params.logo.icon.alt }}"
+        />
+      </a>
+      {{- end -}}
       <button
         class="navbar-toggler"
         type="button"
