@@ -36,3 +36,7 @@
 .navbar-brand-icon img {
 	width: 3em;
 }
+
+.footer__right > a > img {
+    max-width: 60px;
+}
