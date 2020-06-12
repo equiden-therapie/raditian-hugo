@@ -33,9 +33,11 @@
         <p class="lead">
           {{ .description }}
         </p>
+        {{ if .button }}
         <a href="{{ .button.URL | absURL }}" class="btn btn-primary"
           >{{ .button.btnText }}<i class="{{ .button.icon }}"></i
         ></a>
+        {{ end }}
       </div>
       <div class="col-12 col-md-7 pl-md-0 text-right">
         <img
@@ -61,9 +63,11 @@
         <p class="lead">
           {{ .description }}
         </p>
+        {{ if .button }}
         <a href="{{ .button.URL | absURL }}" class="btn btn-primary"
           >{{ .button.btnText }}<i class="{{ .button.icon }}"></i
         ></a>
+        {{ end }}
       </div>
       {{ end }}
     </div>
