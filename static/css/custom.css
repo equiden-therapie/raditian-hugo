@@ -1,5 +1,9 @@
 /* You can customize theme styles here */
 
+.btn > i {
+	margin-right: 1em;
+}
+
 .navbar {
 	font-size: 1em;
 }
