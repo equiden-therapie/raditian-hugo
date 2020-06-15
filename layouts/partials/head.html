@@ -1,6 +1,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+{{ if .Site.Params.googleTagManagerID }}
 <!-- Google Tag Manager -->
 <script>
     (function (w, d, s, l, i) {
@@ -20,6 +21,7 @@
 </script>
 <!-- End Google Tag Manager -->
 <!-- endinject -->
+{{ end }}
 <title>{{ .Site.Data.homepage.homepage.head.title }}</title>
 <style>
     /* Fade In animation triggering after font load or 3s timeout */
