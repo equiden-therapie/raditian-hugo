@@ -8,7 +8,7 @@
       {{- if .Site.Params.logo.icon.url -}}
       <a class="navbar-brand-icon" href="{{ .Site.BaseURL | absURL }}">
         <img
-          src="{{ .Site.Params.logo.icon.url }}"
+          src="{{ .Site.Params.logo.icon.url | absURL }}"
           alt="{{ .Site.Params.logo.icon.alt }}"
         />
       </a>
