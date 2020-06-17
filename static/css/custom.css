@@ -40,3 +40,7 @@
 .footer__right > a > img {
     max-width: 60px;
 }
+
+.container.article {
+    min-height: 75vh;
+}
