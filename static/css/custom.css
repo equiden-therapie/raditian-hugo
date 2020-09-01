@@ -44,3 +44,12 @@
 .container.article {
     min-height: 75vh;
 }
+
+.row.platform-links {
+    font-size: 1.2em;
+    letter-spacing: 0.5em;
+}
+
+.row.platform-links i {
+    color: #000000;
+}
