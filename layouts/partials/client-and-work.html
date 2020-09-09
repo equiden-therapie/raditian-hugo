@@ -35,7 +35,7 @@
       <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
         <h3>{{ .title }}</h3>
         <p class="lead">
-          {{ .description }}
+          {{ .description | safeHTML }}
         </p>
         {{ if .button }}
         <a href="{{ .button.URL }}" class="btn btn-primary"
@@ -65,7 +65,7 @@
       <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
         <h3>{{ .title }}</h3>
         <p class="lead">
-          {{ .description }}
+          {{ .description | safeHTML }}
         </p>
         {{ if .button }}
         <a href="{{ .button.URL }}" class="btn btn-primary"
