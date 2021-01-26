@@ -44,16 +44,45 @@
         {{ end }}
       </div>
       <div class="col-12 col-md-7 pl-md-0 text-right">
+        {{ if .image }}
         <img
           class='lozad img-responsive {{ cond (eq ( mod $index 4) 0) "img-clip-left-backward" "img-clip-left-forward" }}'
           src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
           data-src="{{ .image.x | absURL }}"
           data-srcset="{{ .image.x | absURL }} 1x, {{ .image._2x | absURL }} 2x"
           alt="{{ .title }}"
-        />
+          />
+        {{ end }}
+        {{ if .images }}
+        <div id="carousel-{{ $index }}" data-ride="carousel" class='carousel slide {{ cond (eq ( mod $index 4) 0) "img-clip-left-backward" "img-clip-left-forward" }}'
+            >
+            <div class="carousel-inner">
+              {{ range $imageIndex, $slide := .images }}
+              <div class='carousel-item {{ cond (eq ( mod $imageIndex 4) 0) "active" "" }}'>
+                <img
+                  class="lozad img-responsive d-block w-100"
+                  src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                  data-src="{{ $slide.x | absURL }}"
+                  data-srcset="{{ $slide.x | absURL }} 1x, {{ $slide._2x | absURL }} 2x"
+                  alt="{{ .title }}"
+                  />
+              </div>
+              {{ end }}
+            </div>
+            <a class="carousel-control-prev" href="#carousel-{{ $index }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-{{ $index }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        {{ end }}
       </div>
       {{ else }}
       <div class="col-12 col-md-7 pl-md-0 text-right">
+        {{ if .image }}
         <img
           class='lozad img-responsive {{ cond (eq ( mod $index 4) 1)  "img-clip-right-backward" "img-clip-right-forward" }}'
           src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
@@ -61,6 +90,34 @@
           data-srcset="{{ .image.x | absURL }} 1x, {{ .image._2x | absURL }} 2x"
           alt="{{ .title }}"
         />
+        {{ end }}
+
+        {{ if .images }}
+        <div id="carousel-{{ $index }}" data-ride="carousel" class='carousel slide {{ cond (eq ( mod $index 4) 0) "img-clip-right-backward" "img-clip-right-forward" }}'
+            >
+            <div class="carousel-inner">
+              {{ range $imageIndex, $slide := .images }}
+              <div class='carousel-item {{ cond (eq ( mod $imageIndex 4) 0) "active" "" }}'>
+                <img
+                  class="lozad img-responsive d-block w-100"
+                  src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+                  data-src="{{ $slide.x | absURL }}"
+                  data-srcset="{{ $slide.x | absURL }} 1x, {{ $slide._2x | absURL }} 2x"
+                  alt="{{ .title }}"
+                  />
+              </div>
+              {{ end }}
+            </div>
+            <a class="carousel-control-prev" href="#carousel-{{ $index }}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-{{ $index }}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        {{ end }}
       </div>
       <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
         <h3>{{ .title }}</h3>

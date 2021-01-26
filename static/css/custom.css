@@ -53,3 +53,14 @@
 .row.platform-links i {
     color: #000000;
 }
+
+@media (min-width: 768px) {
+  .img-clip-left-backward .carousel-control-prev,
+  .img-clip-left-forward .carousel-control-prev {
+    margin-left: 30px;
+  }
+  .img-clip-right-backward .carousel-control-next,
+  .img-clip-right-forward .carousel-control-next {
+    margin-right: 30px;
+  }
+}
