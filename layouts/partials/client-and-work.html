@@ -93,7 +93,7 @@
         {{ end }}
 
         {{ if .images }}
-        <div id="carousel-{{ $index }}" data-ride="carousel" class='carousel slide {{ cond (eq ( mod $index 4) 0) "img-clip-right-backward" "img-clip-right-forward" }}'
+        <div id="carousel-{{ $index }}" data-ride="carousel" class='carousel slide {{ cond (eq ( mod $index 4) 1) "img-clip-right-backward" "img-clip-right-forward" }}'
             >
             <div class="carousel-inner">
               {{ range $imageIndex, $slide := .images }}
