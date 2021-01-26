@@ -13,6 +13,18 @@
 	font-size: 1em;
 }
 
+li,
+.section li {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+ul {
+  margin-bottom: 2rem;
+  padding-left: 0.5rem;
+}
+
 @media (min-width: 375px) {
 	.navbar {
 		font-size: 1.25em;
